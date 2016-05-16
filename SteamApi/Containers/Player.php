@@ -30,20 +30,20 @@ class Player {
 	public $personaStateFlags;
 
 	public function __construct($player)
-	{
-		$this->steamId                  = $player->steamid;
-		$this->communityVisibilityState = $player->communityvisibilitystate;
-		$this->profileState             = $player->profilestate;
-		$this->personaName              = $player->personaname;
-		$this->lastLogoff               = date('F jS, Y h:ia', $player->lastlogoff);
-		$this->profileUrl               = $player->profileurl;
-		$this->avatar                   = $player->avatar;
-		$this->avatarMedium             = $player->avatarmedium;
-		$this->avatarFull               = $player->avatarfull;
-		$this->personaState             = $this->convertPersonaState($player->personastate);
-		$this->primaryClanId            = isset($player->primaryclanid) ? $player->primaryclanid : null;
-		$this->timecreated              = isset($player->timecreated) ? date('F jS, Y h:ia', $player->timecreated) : null;
-		$this->personaStateFlags        = isset($player->personastateflags) ? $player->personastateflags : null;
+		{
+			$this->steamId                  = $player->steamid;
+			$this->communityVisibilityState = $player->communityvisibilitystate;
+			$this->profileState             = isset($player->profilestate) ? $player->profilestate : null;
+			$this->personaName              = isset($player->personaname) ? $player->personaname : null;
+			$this->lastLogoff               = isset($player->lastlogoff) ? date('F jS, Y h:ia', $player->lastlogoff) : null;
+			$this->profileUrl               = $player->profileurl;
+			$this->avatar                   = $player->avatar;
+			$this->avatarMedium             = $player->avatarmedium;
+			$this->avatarFull               = $player->avatarfull;
+			$this->personaState             = $this->convertPersonaState($player->personastate);
+			$this->primaryClanId            = isset($player->primaryclanid) ? $player->primaryclanid : null;
+			$this->timecreated              = isset($player->timecreated) ? date('F jS, Y h:ia', $player->timecreated) : null;
+			$this->personaStateFlags        = isset($player->personastateflags) ? $player->personastateflags : null;
 	}
 
 	protected function convertPersonaState($personaState)
