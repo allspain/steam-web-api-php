@@ -5,6 +5,7 @@ namespace SteamApi;
 use SteamApi\Client;
 use SteamApi\Containers\Item;
 use SteamApi\Interfaces\IEconItems;
+use SteamApi\Response\Status;
 
 class EconItems extends Client implements IEconItems {
 

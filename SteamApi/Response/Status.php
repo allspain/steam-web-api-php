@@ -1,5 +1,4 @@
 <?php
-
 namespace SteamApi\Response;
 
 class Status {
